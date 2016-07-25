@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/menu_editar_perfil" android:icon="@android:drawable/ic_menu_edit"
+            android:title="Editar perfil" />
+        <item android:id="@+id/menu_perfiles" android:icon="@android:drawable/ic_menu_agenda"
+            android:title="Trabajos que realizo" />
+        <item android:id="@+id/menu_logout" android:icon="@android:drawable/ic_lock_idle_lock"
+            android:title="Desconectarse" />
+    </group>
+
+
+</menu>

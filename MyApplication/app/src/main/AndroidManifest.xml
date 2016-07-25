@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.sergioarispejulio.proyectogrado" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- Messages will be received even if the application is in sleep mode. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
+    <!-- This avoid other apps to register and receive messages from server. -->
+    <permission android:name="com.example.sergioarispejulio.proyectogrado.permission.C2D_MESSAGE"
+        android:protectionLevel="signature"/>
+
+    <uses-permission android:name="com.example.sergioarispejulio.proyectogrado.permission.C2D_MESSAGE"/>
+
+    <!-- For GcmReceiver service handles message sent from GCM server, this permission is
+    required to receive message-->
+    <uses-permission android:name="com.google.android.c2dm.permission.SEND"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".Loader"
+            android:label="Resultado"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".index_login"
+            android:label="@string/title_activity_client_index_with_logging"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".register"
+            android:label="@string/title_activity_register"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".search_work"
+            android:label="@string/title_activity_search_work"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".index_with_logging_V2"
+            android:label="@string/title_activity_index_with_logging__v2"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".index_with_logging_v2"
+            android:label="@string/title_activity_index_with_logging_v2"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".select_type_of_job_client"
+            android:label="@string/title_activity_select_type_of_job_client" >
+        </activity>
+        <activity
+            android:name=".update_type_of_job"
+            android:label="Trabajos que realizo"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".comment_worker"
+            android:label="Comentar trabajador"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".edit_profile"
+            android:label="Editar perfil"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".form_create_request_of_employee_V2"
+            android:label="Crear solicitud"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".form_create_request_of_employeeV2"
+            android:label="Crear solicitud"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".view_profile_workerV2"
+            android:label="Ver perfil trabajador"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".view_workV2"
+            android:label="Ver trabajo"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".result_search_workV2"
+            android:label="Resultado"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".result_search_employee"
+            android:label="Resultado"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+
+
+
+        <!-- [START the default gcm receiver] -->
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="com.feelzdroid.gcmexample" />
+            </intent-filter>
+        </receiver>
+        <!-- [End default gcm receiver] -->
+
+        <!-- [Custom service gets push notification from server, add code in this service to show notifications] -->
+        <service
+            android:name=".clases.myGCMListener"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+        <service android:name=".clases.RegistrationService"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

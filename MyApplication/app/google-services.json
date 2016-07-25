@@ -1,0 +1,35 @@
+{
+  "project_info": {
+    "project_number": "158046378444",
+    "project_id": "proyectodegrado-1286"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158046378444:android:148b6e6b8bdc9f74",
+        "android_client_info": {
+          "package_name": "com.example.sergioarispejulio.proyectogrado"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNr6HSQBIuj5fEF95mYhpKZ3eBgxNZE5Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
